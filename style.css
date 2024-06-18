@@ -1,0 +1,278 @@
+:root {
+    /* https://colorhunt.co/palette/2b3467bad7e9fcffe7eb455f */
+    --cor-primaria: #2B3467;
+    --cor-secundaria: #BAD7E9;
+    --cor-terciaria: #FCFFE7;
+    --cor-quaternaria: #EB455F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header span.material-symbols-outlined {
+    display: none;
+} */
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+}
+
+h2 {
+    color: var(--cor-primaria);
+    border-left: 8px solid var(--cor-secundaria);
+    padding-left: 8px;
+    margin-bottom: 16px;
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    /* border: 1px solid black; */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 16px;
+}
+
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+    border-bottom: 8px solid var(--cor-secundaria);
+}
+
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+}
+
+header .container,
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 0;
+}
+
+header li {
+    list-style: none;
+    display: inline;
+    margin-left: 8px;
+}
+
+header li a {
+    text-decoration: none;
+    color: var(--cor-terciaria);
+}
+
+header li a:hover {
+    border-bottom: 2px solid var(--cor-secundaria);
+}
+
+header button {
+    display: none;
+}
+
+.grid {
+    display: grid;
+}
+
+.sobre-loja {
+    grid-template-columns: 34% 64%;
+    column-gap: 2%;
+}
+
+.produtos-lista {
+    grid-template-columns: repeat(4, 23.2%);
+    column-gap: 2%;
+    row-gap: 5%;
+}
+
+.loja-descricao::after {
+    content: '/ / /';
+    display: flex;
+    margin-top: 24px;
+    font-size: 32px;
+    font-family: "Rubik Mono One", monospace;
+    justify-content: flex-end;
+}
+
+#sobre img {
+    max-width: 100%;
+    box-shadow: 10px 10px #BAD7E9;
+}
+
+#sobre {
+    margin: 32px 0;
+}
+
+#sobre p {
+    /* margin: 0 16px; */
+    text-indent: 32px;
+    text-align: justify;
+}
+
+.tamanhos {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.produto img {
+    max-width: 100%;
+}
+
+.produto:hover .overlay-tamanhos {
+    opacity: 1;
+    width: 100%;
+}
+
+.overlay-tamanhos {
+    text-align: center;
+    color: var(--cor-terciaria);
+    padding: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(43, 52, 103, 0.7);
+    opacity: 0;
+    font-size: 0.8em;
+
+    transition: all ease 0.5s;
+}
+
+.produto button {
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+}
+
+#produtos {
+    padding-bottom: 32px;
+}
+
+footer {
+    margin-top: 54px;
+}
+
+footer a {
+    color: var(--cor-terciaria);
+}
+
+footer p a:hover {
+    border-bottom: 2px solid var(--cor-secundaria);
+}
+
+.preco {
+    margin: 8px 0;
+    text-align: right;
+    font-size: 1.1em;
+}
+
+.preco::before {
+    content: 'R$ ';
+    font-size: 11px;
+}
+
+    nav {
+        display: inline;
+    }
+
+/* tablets */
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+
+    .container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .sobre-loja {
+        grid-template-columns: 100%;
+        row-gap: 5%;
+    }
+
+    .produtos-lista {
+        grid-template-columns: repeat(2, 48%);
+        column-gap: 4%;
+        row-gap: 2%;
+
+        margin-bottom: 54px;
+    }
+
+    nav {
+        display: inline;
+    }
+
+}
+
+/* mobile */
+@media screen and (max-width: 640px) {
+
+    .container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .sobre-loja {
+        grid-template-columns: 100%;
+        row-gap: 2%;
+    }
+
+    #produtos {
+        margin-top: 54px;
+    }
+
+    .produtos-lista {
+        grid-template-columns: repeat(1, 100%);
+        /* column-gap: 4%; */
+        row-gap: 2%;
+
+        margin-bottom: 54px;
+    } 
+
+    footer {
+        margin-top: 354px;
+    }
+    
+    header button {
+        display: inline;
+        outline: none;
+        background-color: var(--cor-primaria);
+        border: none;
+        color: var(--cor-terciaria);
+    }
+
+    header .flex-container {
+        display: flex;
+        column-gap: 16px;
+        flex-direction: row;
+        align-items: center;
+    }
+        
+    header .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+    }
+
+    nav {
+        display: none;
+    }
+
+    header span.material-symbols-outlined {
+        display: inline-block;
+    }
+}
